@@ -1,16 +1,73 @@
 ---
-
+import "../app.css";
+import { ArrowRightIcon } from "@lucide/astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>CNVT® - Agência de Marketing 360º</title>
+  </head>
+  <body
+    class="bg-zinc-950 text-zinc-100 flex flex-col justify-between min-h-screen border-[16px]"
+  >
+    <div
+      class="md:grid flex flex-col justify-between h-full grow md:grid-cols-2"
+    >
+      <div class="flex flex-col justify-between p-12 md:border-r">
+        <div>
+          <h1 class="md:text-9xl text-5xl tracking-tighter font-bold">CNVT</h1>
+        </div>
+        <div class="md:hidden mt-8 text-sm">
+          Não fazemos post que só enfeita feed, criamos estratégia que vende
+          para com empreendedores que querem <span class="font-medium"
+            >Marcas Paradigma ®</span
+          >, não mais uma opção na prateleira.
+        </div>
+        <div class="text-xl md:block hidden">
+          Pensamos no seu negócio como se fosse nosso. Não fazemos post que só
+          enfeita feed, criamos estratégia que vende. Quando você conquista,
+          comemoramos. Quando aperta, encontramos a saída juntos. Trabalhamos
+          com empreendedores que querem <span class="font-medium"
+            >Marcas Paradigma ®</span
+          >, não mais uma opção na prateleira.
+        </div>
+      </div>
+      <div class="flex flex-col links divide-y">
+        {
+          [
+            {
+              title: "SOCIAL MEDIA",
+              href: "https://form.respondi.app/tAaiKV53",
+            },
+            {
+              title: "CONSULTORIA DE MARKETING",
+              href: "https://form.respondi.app/tAaiKV53",
+            },
+            {
+              title: "IDENTIDADE VISUAL",
+              href: "https://form.respondi.app/tAaiKV53",
+            },
+            {
+              title: "CNVT.LINK",
+              href: "https://form.respondi.app/tAaiKV53",
+            },
+          ].map((link) => (
+            <a href={link.href}>
+              <span class="flex gap-12">
+                <ArrowRightIcon class="size-12 shrink-0" />
+                <span>{link.title}</span>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class="font-medium tracking-wider p-12 text-xs border-t">
+      ONDE PARCERIA VIRA RESULTADO
+    </div>
+  </body>
 </html>
