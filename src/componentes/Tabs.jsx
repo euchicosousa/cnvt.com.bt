@@ -274,7 +274,7 @@ function getText(text, uppercase, tracking) {
 }
 
 export default function UnicodeFonts() {
-  const [text, setText] = createSignal("Coloque seu texto aqui");
+  const [text, setText] = createSignal("");
 
   const [isUppercase, setIsUppercase] = createSignal(false);
   const [isTracking, setIsTracking] = createSignal("normal");
@@ -319,10 +319,11 @@ export default function UnicodeFonts() {
       <div className="tabs-body p-8">
         <input
           value={text()}
-          class="text-2xl bg-zinc-900 p-8 w-full mb-4"
+          class="text-2xl bg-zinc-900 p-8 w-full mb-4 outline-none focus:ring-2"
           onInput={(e) => setText(e.target.value)}
+          placeholder="Seu texto aqui"
         />
-        <Show when={isUppercase() || isTracking()}>
+        <Show when={isUppercase() || isTracking() !== "normal"}>
           <TextLine text={getText(text(), isUppercase(), isTracking())}>
             {getText(text(), isUppercase(), isTracking())}
           </TextLine>
@@ -368,7 +369,7 @@ const TextLine = (props) => {
 
   return (
     <div
-      class="p-8 text-2xl  font-medium border items-center flex justify-between"
+      class="p-8 text-xl  font-medium border items-center flex justify-between"
       onClick={(e) => handleCopy(props.text)}
     >
       <div>{props.children}</div>
