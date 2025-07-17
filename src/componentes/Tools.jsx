@@ -283,7 +283,7 @@ export default function UnicodeFonts() {
 
   return (
     <div className="flex-col">
-      <div class="flex border-b">
+      <div class="flex border-b justify-between md:justify-start">
         <button
           class={`p-8 ${isUppercase() ? "bg-zinc-100 text-zinc-950" : ""}`}
           onClick={() => setIsUppercase(!isUppercase())}
@@ -316,7 +316,7 @@ export default function UnicodeFonts() {
           <TypeIcon class="size-16" />
         </button>
       </div>
-      <div className="tabs-body p-8">
+      <div className="p-8">
         <input
           value={text()}
           class="text-2xl bg-zinc-900 p-8 w-full mb-4 outline-none focus:ring-2"
